@@ -4,25 +4,24 @@ An end-to-end online learning enrollment analytics project built using **Azure D
 
 This project transforms raw course enrollment data into clean, structured, and business-ready analytical tables. It includes data cleaning, validation, data-quality tracking, reconciliation, and dashboard development.
 
-![Architecture](Images/Architecture/architecture.png)
 
 ## Table of Contents
 
-- [Business Problem](#business-problem)
-- [Architecture](#architecture)
-- [Pipeline Lineage](#pipeline-lineage)
-- [Tech Stack](#tech-stack)
-- [Dataset](#dataset)
-- [Repository Structure](#repository-structure)
-- [Layer Details](#layer-details)
-- [Data Quality Rules](#data-quality-rules)
-- [Reconciliation](#reconciliation)
-- [Gold Tables](#gold-tables)
-- [Dashboard](#dashboard)
-- [How to Run](#how-to-run)
-- [Business Requirements Coverage](#business-requirements-coverage)
-- [Key Learnings](#key-learnings)
-- [Future Improvements](#future-improvements)
+- Business Problem
+- Architecture
+  Pipeline Lineage
+- Tech Stack
+- Dataset
+- Repository Structure
+- Layer Details
+- Data Quality Rules
+- Reconciliation
+- Gold Tables
+- Dashboard
+- How to Run
+- Business Requirements Coverage
+- Key Learnings
+- Future Improvements
 
 ## Business Problem
 
@@ -42,7 +41,6 @@ Manual data cleaning makes reporting difficult and less reliable.
 | Silver | Improve data quality | Clean text, validate records, handle duplicates, separate rejected records |
 | Gold | Support business analysis | Create monthly, category, course, channel, and data-quality summaries |
 
-![Medallion Architecture](Images/Architecture/medallion_architecture.png)
 
 ## Pipeline Lineage
 
@@ -59,7 +57,6 @@ The pipeline processes enrollment data through three layers using Lakeflow Spark
 | `gold_channel_summary` | Gold table | Enrollment summary by channel |
 | `gold_data_quality` | Gold table | Data-quality summary |
 
-![Pipeline Lineage](Images/Pipeline/pipeline_lineage.png)
 
 ## Tech Stack
 
@@ -175,7 +172,7 @@ The project applies data-quality checks to improve the accuracy and consistency 
 | Learner status | Standardize learner status |
 | Auditability | Preserve original records in Bronze |
 
-Details: [`Documentation/data_quality_rules.md`](Documentation/data_quality_rules.md)
+
 
 ## Reconciliation
 
@@ -190,9 +187,8 @@ Data reconciliation checks whether records are correctly processed across Bronze
 | Remaining records to investigate | 23 |
 | Gold aggregation totals | Verify against Silver |
 
-**Important:** The expected clean and rejected counts currently account for 1,260 records. The remaining 23 records must be investigated before reconciliation can be marked complete.
 
-Details: [`Documentation/data_reconciliation.md`](Documentation/data_reconciliation.md)
+
 
 ## Gold Tables
 
@@ -225,11 +221,6 @@ The project includes an interactive Databricks AI/BI Dashboard with three main s
 - Data-quality metrics
 - Validation results
 
-![Dashboard Overview](Images/Dashboard/overview.png)
-
-![Courses and Channels](Images/Dashboard/courses_and_channels.png)
-
-![Data Quality Dashboard](Images/Dashboard/data_quality.png)
 
 ## How to Run
 
@@ -284,12 +275,6 @@ The project includes an interactive Databricks AI/BI Dashboard with three main s
 - Schedule automated pipeline refreshes.
 - Integrate additional online learning datasets.
 - Add automated alerts for pipeline failures.
-
-## Documentation
-
-- [Data Quality Rules](Documentation/data_quality_rules.md)
-- [Data Reconciliation](Documentation/data_reconciliation.md)
-- [Project Review Questions and Answers](Documentation/review_questions.md)
 
 ## License
 
